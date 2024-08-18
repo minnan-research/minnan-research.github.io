@@ -34,7 +34,8 @@
 			font-size: 87%;
 		}
 		.content > p {
-			margin-top: 1.6em;
+			line-height: 2.15;
+			margin-top: 1.5em;
 			word-break: keep-all;
 			white-space: pre-wrap;
 		}
@@ -54,6 +55,24 @@
 			font-size: 0.75em;
 		}
 	</style>
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		document.getElementById('sharelink').addEventListener('click', function(event) {
+			event.preventDefault(); // Prevent the default link behavior
+
+			if (navigator.share) {  // Check if the Web Share API is supported
+				navigator.share({
+					title: document.title,  // Use the current page title
+					url: window.location.href  // Use the current page URL
+				}).then(() => {
+					console.log('Page shared successfully');
+				}).catch((error) => {
+					console.error('Error sharing:', error);
+				});
+			}
+		});
+	});
+	</script>
 </head>
 <body>
 	<p class="header">閩南語常會受國語的發音影響而發錯音，以下蒐集了一些例子可供參考。</p>
@@ -61,7 +80,7 @@
 		<p><strong style="color:#119;">顏色相同則發音相同。顏色不同則發音不同。</strong></p>
 		<p>若發現自己同顏色發音卻不同，或是顏色不同發音卻相同，可能就要查字典了。建議查 <a href="https://sutian.moe.edu.tw/zh-hant/">教育部閩南語辭典</a> 看音標聽發音。</p>
 		<p>留意閩南語的變調，詞組中非最後一個字需變調。</p>
-		<p>可轉傳分享。或 <a href="https://docs.google.com/forms/d/e/1FAIpQLSehFWaiVaaHZEaFOwEE55vSQWZkEHK2BwaLAqhfgCk2QG96vA/viewform">提供建議</a>。</p>
+		<p>可&nbsp;<a id="sharelink" href="#">轉傳分享</a>。或&nbsp;<a href="https://docs.google.com/forms/d/e/1FAIpQLSehFWaiVaaHZEaFOwEE55vSQWZkEHK2BwaLAqhfgCk2QG96vA/viewform">提供建議</a>。</p>
 	</div>
 
 	<hr>
