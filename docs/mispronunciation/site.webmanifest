@@ -1,4 +1,7 @@
 {
+    "name": "閩南語常見發音錯誤",
+    "short_name": "閩南語發音錯誤",
+    "start_url": "./",
     "icons": [
        {
           "src": "/android-chrome-192x192.png",
