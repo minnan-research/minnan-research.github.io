@@ -15,8 +15,10 @@
 		.desc a {
 			color: #119;
 		}
-		html {
-			background-color: #f6f6f6;
+		@media (prefers-color-scheme: light) {
+			html {
+				background-color: #f6f6f6;
+			}
 		}
 		body {
 			color: #333;
@@ -25,7 +27,6 @@
 		}
 		@media (prefers-color-scheme: dark) {
 			html {
-				background-color: #090909;
 				filter: invert(100%) saturate(87%);
 			}
 		}
