@@ -1,7 +1,6 @@
 {
     "name": "",
-    "short_name": "",
-    "theme_color": "#060606",
+    "short_name": "閩南語常見發音錯誤",
     "icons": [
        {
           "src": "/android-chrome-192x192.png",
