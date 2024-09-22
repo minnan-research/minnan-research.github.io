@@ -8,11 +8,6 @@
 	<link rel="manifest" href="site.webmanifest">
 	<title>分享：閩南語常見發音錯誤</title>
 	<style>
-		@media (prefers-color-scheme: dark) {
-			html {
-				filter: invert(100%) saturate(87%);
-			}
-		}
 		a {
 			text-decoration: none;
 			border-bottom: 1px dotted;
@@ -20,10 +15,19 @@
 		.desc a {
 			color: #119;
 		}
+		html {
+			background-color: #f6f6f6;
+		}
 		body {
 			color: #333;
 			margin: 0px; padding: 16px; font-family: Helvetica, "Noto Sans CJK TC", "Microsoft JhengHei UI", sans-serif; padding-bottom: 100px;
 			font-size: 16pt; background-color: #f6f6f6;
+		}
+		@media (prefers-color-scheme: dark) {
+			html {
+				background-color: #090909;
+				filter: invert(100%) saturate(87%);
+			}
 		}
 		.header {
 			color: #000;
