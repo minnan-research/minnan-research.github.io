@@ -1,6 +1,7 @@
 {
     "name": "",
     "short_name": "",
+    "theme_color": "#060606",
     "icons": [
        {
           "src": "/android-chrome-192x192.png",
