@@ -56,24 +56,6 @@
 		span::after, span::before { content: "\2060"; }
 		rt { font-size: 0.75em; }
 	</style>
-	<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		document.getElementById('sharelink').addEventListener('click', function(event) {
-			event.preventDefault(); // Prevent the default link behavior
-
-			if (navigator.share) {  // Check if the Web Share API is supported
-				navigator.share({
-					title: document.title,  // Use the current page title
-					url: window.location.href  // Use the current page URL
-				}).then(() => {
-					console.log('Page shared successfully');
-				}).catch((error) => {
-					console.error('Error sharing:', error);
-				});
-			}
-		});
-	});
-	</script>
 </head>
 <body>
 	<p class="header">閩南語常會受國語影響而發錯音，本頁蒐集了一些例子可供參考。</p>
