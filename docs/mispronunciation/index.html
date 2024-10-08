@@ -232,11 +232,11 @@
 			if (link.href && link.href.endsWith('.wav')) {
 				link.addEventListener('click', function(event) {
 					event.preventDefault(); // Prevent navigating to the .wav file
-					audio.src = 'audio/' + link.href;
+					audio.src = link.href.replace(/(\/)([^\/]+\.wav)$/i, '/audio/$2');
 					audio.play();
 					if (link.dataset.hrefEx && link.dataset.hrefEx.endsWith('.wav')) {
 						audio.addEventListener('ended', function() {
-							audioEx.src = 'audio/' + link.dataset.hrefEx;
+							audioEx.src = link.dataset.hrefEx.replace(/(\/)([^\/]+\.wav)$/i, '/audio/$2');
 							audioEx.play();
 						}, { once: true }); // to ensure the event listener is removed after it's called
 					}
