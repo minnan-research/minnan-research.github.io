@@ -229,14 +229,16 @@
 
 		// Add click event listener to each link with a .wav file
 		links.forEach(link => {
-			if (link.href && link.href.endsWith('.wav')) {
+			const href = link.getAttribute('href');
+			if (href && href.endsWith('.wav')) {
 				link.addEventListener('click', function(event) {
 					event.preventDefault(); // Prevent navigating to the .wav file
-					audio.src = 'audio/' + link.getAttribute('href');
+					audio.src = 'audio/' + href;
 					audio.play();
-					if (link.dataset.hrefEx && link.dataset.hrefEx.endsWith('.wav')) {
+					const hrefEx = link.getAttribute('data-href-ex');
+					if (hrefEx && hrefEx.endsWith('.wav')) {
 						audio.addEventListener('ended', function() {
-							audioEx.src = 'audio/' + link.getAttribute('data-href-ex');
+							audioEx.src = 'audio/' + hrefEx;
 							audioEx.play();
 						}, { once: true }); // to ensure the event listener is removed after it's called
 					}
