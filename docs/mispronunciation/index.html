@@ -7,9 +7,9 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 	<link rel="manifest" href="site.webmanifest">
-	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=headphones" />
 	<title>分享：閩南語常見發音錯誤</title>
 	<style>
@@ -61,8 +61,25 @@
 			opacity: 0.8;
 		}
 		.note { font-size: smaller; margin-left: 0.5em;}
-		.unequal { font-family: "Ubuntu", Tahoma; font-weight: 400; color: #4c4c4c; padding-left: 0.85em; padding-right: 0.85em }
-		.equal { font-family: "Ubuntu", Tahoma; font-weight: 400; color: #696969; padding-left: 0.85em; padding-right: 0.85em }
+		.unequal {
+			/*font-family: 'Ubuntu', monospace; font-weight: 400;*/
+			font-family: "PT Serif", serif;
+  			font-style: normal;
+			color: #4c4c4c; padding-left: 0.85em; padding-right: 0.85em
+		}
+		.equal {
+			/*font-family: 'Ubuntu', monospace; font-weight: 400;*/
+			font-family: "Sixtyfour Convergence", sans-serif;
+			font-optical-sizing: auto;
+			font-weight: 400;
+			font-style: normal;
+			font-variation-settings:
+			"BLED" 0,
+			"SCAN" 0,
+			"XELA" 0,
+			"YELA" 0;
+			color: #696969; padding-left: 0.85em; padding-right: 0.85em
+		}
 		.c1, .c1 + rt { color: #0909b9; }
 		.c2, .c2 + rt { color: Crimson; }
 		.c3, .c3 + rt { color: #006600; }
