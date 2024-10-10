@@ -89,7 +89,7 @@
 	<p>建議查 <a style="color:#118;" href="https://sutian.moe.edu.tw/zh-hant/">教育部台語辭典</a> 看音標聽發音。有耳機圖案的，可以點它聽發音。</p>
 	<p>留意閩南語的變調規則：詞組中<strong>非</strong>最後一個字需變調。</p>
 	<hr>
-	<audio id="audio"></audio><audio id="audio-ex"></audio>
+	<audio id="audio"></audio>
 	<div id="content">
 	<p><span class="c1">研</span>究&nbsp;&nbsp;&nbsp;<a data-href="gian2-thok8.wav"><ruby><span class="c1">研</span><rt>gián</rt></ruby>讀</a><wbr><span class="unequal">≠</span><ruby><span class="c2">言</span><rt>giân</rt></ruby>談<wbr><span class="unequal">≠</span><ruby><span class="c3">沿</span><rt>iân</rt></ruby>路<br>語<a data-href="gian5.wav"><ruby><span class="c2">言</span><rt>giân</rt></ruby></a><wbr><span class="unequal">≠</span><ruby><span class="c3">鉛</span><rt>iân</rt></ruby></p>
 	<p><a data-href="long2-thok8.wav">朗<span class="c1">讀</span></a>&nbsp;&nbsp;&nbsp;閱<span class="c1">讀</span>&nbsp;&nbsp;&nbsp;<a data-href="gian2-thok8.wav">研<span class="c1">讀</span></a><wbr><span class="unequal">≠</span>狼<span class="c2">毒</span>&nbsp;&nbsp;&nbsp;中<span class="c2">毒</span></p>
@@ -223,9 +223,9 @@
 	<p><span class="c1">構</span>造<wbr><span class="equal">=</span><span class="c1">顧</span>羊<wbr><span class="equal">=</span><span class="c1">購</span>買</p>
 	<p>現<span class="c1">今</span><wbr><span class="equal">=</span>現<span class="c1">金</span>&nbsp;&nbsp;&nbsp;目睭<span class="c1">金金</span></p>
 	<p><span class="c1">銀</span>&nbsp;&nbsp;&nbsp;<span class="c1">銀</span>行&nbsp;&nbsp;&nbsp;金包<span class="c1">銀</span><wbr><span class="unequal">≠</span><span class="c2">吟</span>詩<wbr><span class="unequal">≠</span><span class="c3">淫</span>亂</p>
-	<p><span class="c1">向</span>望<wbr><span class="unequal">≠</span>方<span class="c2">向</span></p>
-	<p>衝<span class="c1">突</span><wbr><span class="equal">=</span>撞<span class="c1">突</span></p>
-	<p><span class="c1">柯</span><wbr><span class="equal">=</span><span class="c1">歌</span><wbr><span class="equal">=</span><span class="c1">瓜</span></p>
+	<p><a data-href="ng3-bang7.wav"><span class="c1">向</span>望</a><wbr><span class="unequal">≠</span>方<span class="c2">向</span></p>
+	<p><a data-href="tshiong-tut8.wav">衝<span class="c1">突</span></a><wbr><span class="equal">=</span>撞<span class="c1">突</span></p>
+	<p><a data-href="kua.wav"><span class="c1">柯</span></a><wbr><span class="equal">=</span><span class="c1">歌</span><wbr><span class="equal">=</span><span class="c1">瓜</span></p>
 	<p><span class="c1">毀</span>滅<wbr><span class="unequal">≠</span><span class="c2">悔</span>改</p>
 	<p><ruby><span class="c1">衝</span><rt>tshiong</rt></ruby>動<wbr><span class="unequal">≠</span><ruby><span class="c2">衝</span><rt>tshóng</rt></ruby>碰</p>
 	<p>懷<span class="c1">孕</span><wbr><span class="unequal">≠</span><span class="c2">運</span></p>
@@ -240,18 +240,23 @@
 		const audio = document.getElementById('audio');
 		const audioEx = document.getElementById('audio-ex');
 
-		// Add click event listener to each link with a .wav file
+		let currentEndedHandler = null;
 		links.forEach(link => {
 			if (link.dataset.href && link.dataset.href.endsWith('.wav')) {
 				link.addEventListener('click', function(event) {
-					event.preventDefault(); // Prevent navigating to the .wav file
+					event.preventDefault();
+					if (currentEndedHandler) {
+						audio.removeEventListener('ended', currentEndedHandler);
+						currentEndedHandler = null;
+					}
 					audio.src = 'audio/' + link.dataset.href;
 					audio.play();
 					if (link.dataset.hrefEx && link.dataset.hrefEx.endsWith('.wav')) {
-						audio.addEventListener('ended', function() {
-							audioEx.src = 'audio/' + link.dataset.hrefEx;
-							audioEx.play();
-						}, { once: true }); // to ensure the event listener is removed after it's called
+						currentEndedHandler = function() {
+							audio.src = 'audio/' + link.dataset.hrefEx;
+							audio.play();
+						};
+						audio.addEventListener('ended', currentEndedHandler);
 					}
 				});
 			}
