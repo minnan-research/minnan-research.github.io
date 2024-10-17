@@ -288,15 +288,16 @@
 				});
 			}
 		});
-
-		window.addEventListener("load", function() {
+		function updateMargins() {
 			const paragraphs = document.querySelectorAll('#content > p');
 			paragraphs.forEach(paragraph => {
 				const height = paragraph.clientHeight;
 				paragraph.style.marginTop = `${height * 0.5}px`;
 				paragraph.style.marginBottom = `${height * 0.5}px`;
 			});
-		});
+		}
+		window.addEventListener("load", updateMargins);
+		window.addEventListener("resize", updateMargins);
 	</script>	
 </body>
 </html>
