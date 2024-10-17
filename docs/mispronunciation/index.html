@@ -26,7 +26,7 @@
 		a {
 			text-decoration: none;
 			padding-bottom: 3px;
-			border-bottom: 1px dashed #666;
+			border-bottom: 1px solid #808080;
 		}
 		#content .c1, #content .c2, #content .c3, #content .c4, #content .c5 {
 			text-shadow: -0.08em -0.08em 0.2em white, 0.08em -0.08em 0.2em white, -0.08em 0.08em 0.2em white, 0.08em 0.08em 0.2em white;
@@ -48,8 +48,10 @@
 		}
 		hr { margin-top: 1.7em; margin-bottom: 1.7em; }
 		#header {
-			color: #030303;
 			font-size: 105%;
+		}
+		#header, .emphasize {
+			color: #030303;
 		}
 		#content > p {
 			line-height: 2.4;
@@ -98,8 +100,8 @@
 <body>
 	<p id="header">閩南語常會受國語影響而發錯音，本頁蒐集了一些例子可供參考。</p>
 	<p><span class="c1">注意：每一組詞語中，顏色相同則發音相同。顏色不同則發音不同。</span></p>
-	<p>建議查 <a class="c1" href="https://sutian.moe.edu.tw/zh-hant/">教育部台語辭典</a> 看音標聽發音。有耳機圖案的，可以點它聽發音。</p>
-	<p>留意閩南語的變調規則：詞組中<span style="color:#111">非</span>最後一個字需變調。</p>
+	<p><span class="emphasize">有耳機圖案的，可以點它聽發音。</span>也可查 <a class="c1" href="https://sutian.moe.edu.tw/zh-hant/">教育部台語辭典</a> 看音標聽發音。</p>
+	<p>留意閩南語的變調規則：詞組中<span class="emphasize">非</span>最後一個字需變調。</p>
 	<hr>
 	<audio id="audio"></audio>
 	<div id="content">
@@ -251,8 +253,8 @@
 	<p>亞伯拉<span class="c1">罕</span><wbr><span class="equal">=</span>稀<span class="c1">罕</span></p>
 	</div>
 	<hr>
-	<p>音檔來自<a class="c1" href="https://sutian.moe.edu.tw/zh-hant/">教育部臺灣台語常用詞辭典</a></p>
-	<p><a class="c1" href="https://docs.google.com/forms/d/e/1FAIpQLSehFWaiVaaHZEaFOwEE55vSQWZkEHK2BwaLAqhfgCk2QG96vA/viewform">提供建議</a></p>
+	<p>音檔來自<a href="https://sutian.moe.edu.tw/zh-hant/">教育部臺灣台語常用詞辭典</a></p>
+	<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSehFWaiVaaHZEaFOwEE55vSQWZkEHK2BwaLAqhfgCk2QG96vA/viewform">提供建議</a></p>
 	<script>
 		const links = document.querySelectorAll('#content a');
 		const audio = document.getElementById('audio');
