@@ -1,6 +1,13 @@
 import os
+import sys
 from pydub import AudioSegment
 from pydub.silence import detect_nonsilent
+
+# Get the directory where the script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Change the current working directory to the script's directory
+os.chdir(script_dir)
 
 # Folder containing the wav files
 input_folder = "audio_temp"
