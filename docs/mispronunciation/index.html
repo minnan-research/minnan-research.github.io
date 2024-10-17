@@ -289,6 +289,14 @@
 				});
 			}
 		});
+
+		window.addEventListener("load", function() {
+			const paragraphs = document.querySelectorAll('#content > p');
+			paragraphs.forEach(paragraph => {
+				const height = paragraph.clientHeight;
+				paragraph.style.marginBottom = `${height * 1.5}px`;
+			});
+		});
 	</script>	
 </body>
 </html>
