@@ -60,7 +60,6 @@
 		}
 		#content > p {
 			line-height: 2.4;
-			margin-bottom: 2.2em;
 			word-break: keep-all;
 			white-space: pre-wrap;
 		}
@@ -294,7 +293,8 @@
 			const paragraphs = document.querySelectorAll('#content > p');
 			paragraphs.forEach(paragraph => {
 				const height = paragraph.clientHeight;
-				paragraph.style.marginBottom = `${height * 0.9}px`;
+				paragraph.style.marginTop = `${height * 0.5}px`;
+				paragraph.style.marginBottom = `${height * 0.5}px`;
 			});
 		});
 	</script>	
