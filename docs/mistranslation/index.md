@@ -131,4 +131,4 @@
 
 二是如國語 **老是**、**一直都…** 的意思。這時發音是 tsóng`-`sī。
 
-建議在教育部台語辭典[用「**總是**」搜尋例句](https://sutian.moe.edu.tw/zh-hant/tshiau/?lui=tai_ku&tsha=%E7%B8%BD%E6%98%AF)，即可知兩者差異。
+建議在教育部台語辭典[用「**總是**」搜尋例句](https://sutian.moe.edu.tw/zh-hant/tshiau/?lui=tai_ku&tsha=%E7%B8%BD%E6%98%AF)，多聽聽看即可知兩者差異。
