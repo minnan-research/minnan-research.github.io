@@ -8,7 +8,7 @@
 
 你會說「**<ruby>這寡<rt>tsit-kóa</rt></ruby>**&nbsp;/&nbsp;**<ruby>彼寡<rt>hit-kóa</rt></ruby>**」還是「**<ruby>遮<rt>tsia</rt></ruby>的**&nbsp;/&nbsp;**<ruby>遐<rt>hia</rt></ruby>的**」呢？
 
-也許你從小都是說「**遮的**&nbsp;/&nbsp;**遐的**」，但看著文字的「**這些**&nbsp;/&nbsp;**那些**」就直譯成：「**遮寡**&nbsp;/&nbsp;**彼寡**」了？
+也許你從小都是說「**遮的**&nbsp;/&nbsp;**遐的**」，但看著文字的「**這些**&nbsp;/&nbsp;**那些**」就直譯成：「**這寡**&nbsp;/&nbsp;**彼寡**」了？
 
 只有極少數較新的字典有收錄「**這寡**&nbsp;/&nbsp;**彼寡**」，看來有可能是受國語影響產生的新式說法。
 
