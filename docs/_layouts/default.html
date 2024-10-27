@@ -72,12 +72,18 @@
 		document.body.style.fontSize = size + 'px';
 		localStorage.setItem('fontSize', size);
 	}
-	
-	document.addEventListener('DOMContentLoaded', () => {
+	function loadFontSize() {
 		const savedSize = localStorage.getItem('fontSize') || 20;
 		fontSizeSlider.value = savedSize;
 		updateFontSize(savedSize);
 		document.body.style.fontSize = savedSize + 'px';
+	}
+	loadFontSize();
+	
+	document.addEventListener("visibilitychange", () => {
+		if (document.visibilityState === "visible") {
+			loadFontSize();
+		}
 	});
 </script>
 </html>
