@@ -275,12 +275,18 @@
 			localStorage.setItem('fontSize', size);
 			updateMargins();
 		}
+		function loadFontSize() {
+			const savedSize = localStorage.getItem('fontSize') || 20;
+			fontSizeSlider.value = savedSize;
+			updateFontSize(savedSize);
+			document.body.style.fontSize = savedSize + 'px';
+		}
+		loadFontSize();
 		
-		const savedSize = localStorage.getItem('fontSize') || 20;
-		fontSizeSlider.value = savedSize;
-		updateFontSize(savedSize);
-		document.body.style.fontSize = savedSize + 'px';
-		
+		document.addEventListener("visibilitychange", () => {
+			if (document.visibilityState === "visible") {
+				loadFontSize();
+			});
 		const links = document.querySelectorAll('#content a');
 		const audio = document.getElementById('audio');
 		const audioEx = document.getElementById('audio-ex');
