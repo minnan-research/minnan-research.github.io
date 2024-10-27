@@ -74,7 +74,7 @@
 	}
 	
 	document.addEventListener('DOMContentLoaded', () => {
-		const savedSize = localStorage.getItem('fontSize') || parseInt(document.body.style.fontSize);
+		const savedSize = localStorage.getItem('fontSize') || 20;
 		fontSizeSlider.value = savedSize;
 		updateFontSize(savedSize);
 		document.body.style.fontSize = savedSize + 'px';
