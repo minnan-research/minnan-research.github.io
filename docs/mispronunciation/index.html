@@ -276,13 +276,10 @@
 			updateMargins();
 		}
 		
-		document.addEventListener('DOMContentLoaded', () => {
-			const savedSize = localStorage.getItem('fontSize') || 20;
-			fontSizeSlider.value = savedSize;
-			updateFontSize(savedSize);
-			document.body.style.fontSize = savedSize + 'px';
-			updateMargins();
-		});
+		const savedSize = localStorage.getItem('fontSize') || 20;
+		fontSizeSlider.value = savedSize;
+		updateFontSize(savedSize);
+		document.body.style.fontSize = savedSize + 'px';
 		
 		const links = document.querySelectorAll('#content a');
 		const audio = document.getElementById('audio');
