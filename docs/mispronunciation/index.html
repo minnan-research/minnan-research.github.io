@@ -276,7 +276,7 @@
 			fontSizeDisplay.textContent = size + 'px';
 		}
 		function saveFontSize(size) {
-			document.body.style.fontSize = size + 'px';
+			document.documentElement.style.fontSize = size + 'px';
 			localStorage.setItem('fontSize', size);
 			updateMargins();
 		}
