@@ -324,7 +324,7 @@
 		function updateMargins() {
 			const paragraphs = document.querySelectorAll('#content > p');
 			paragraphs.forEach(paragraph => {
-				const height = Math.min(Math.max(paragraph.clientHeight, 70), 240);
+				const height = Math.min(Math.max(paragraph.clientHeight, 80), 240);
 				paragraph.style.marginTop = `${height * 0.5}px`;
 				paragraph.style.marginBottom = `${height * 0.5}px`;
 			});
