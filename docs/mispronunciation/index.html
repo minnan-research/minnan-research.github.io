@@ -43,7 +43,6 @@
 			line-height: 1.3;
 			padding-bottom: 32px;
 			background-color: #f3f3f3;
-			font-size: 20px;
 		}
 		hr { margin-top: 1.7em; margin-bottom: 1.7em; }
 		#header {
@@ -92,6 +91,11 @@
 			}
 		}
 	</style>
+	<script>
+		const DEFAULT_FONT_SIZE = 20;
+		const savedSize = localStorage.getItem('fontSize') || DEFAULT_FONT_SIZE;
+		document.documentElement.style.fontSize = savedSize + 'px';
+	</script>
 </head>
 <body>
 	<p id="header">閩南語常會受國語影響而發錯音，本頁蒐集了一些例子可供參考。</p>
@@ -260,7 +264,7 @@
 	<hr>
 	<div>
 		<label for="fontSizeSlider" style="margin-right: 0.2em;">文字大小</label>
-		<input type="range" id="fontSizeSlider" min="16" max="32" value="20" oninput="updateFontSize(this.value)" onchange="saveFontSize(this.value)" style="width: 10em; vertical-align: middle; margin-right: 0.5em;">
+		<input type="range" id="fontSizeSlider" min="16" max="32" oninput="updateFontSize(this.value)" onchange="saveFontSize(this.value)" style="width: 10em; vertical-align: middle; margin-right: 0.5em;">
 		<span id="fontSizeValue">20px</span>
 	</div>
 	<p><a class="c1" href="https://docs.google.com/forms/d/e/1FAIpQLSehFWaiVaaHZEaFOwEE55vSQWZkEHK2BwaLAqhfgCk2QG96vA/viewform">提供建議</a></p>
@@ -277,18 +281,19 @@
 			updateMargins();
 		}
 		function loadFontSize() {
-			const savedSize = localStorage.getItem('fontSize') || 20;
+			const savedSize = localStorage.getItem('fontSize') || DEFAULT_FONT_SIZE;
 			fontSizeSlider.value = savedSize;
 			updateFontSize(savedSize);
-			document.body.style.fontSize = savedSize + 'px';
+			document.documentElement.style.fontSize = savedSize + 'px';
 		}
 		loadFontSize();
-		
+
 		document.addEventListener("visibilitychange", () => {
 			if (document.visibilityState === "visible") {
 				loadFontSize();
 			}
 		});
+
 		const links = document.querySelectorAll('#content a');
 		const audio = document.getElementById('audio');
 		const audioEx = document.getElementById('audio-ex');
