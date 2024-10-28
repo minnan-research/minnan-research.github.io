@@ -22,10 +22,11 @@
 			font-family: tauhu-oo, sans-serif;
 			font-weight: 400;
 			line-height: 1.5;
-			padding-bottom: 32px;
+			padding-bottom: 48px;
 			background-color: #f3f3f3;
-			font-size: 21px;
+			font-size: 20px;
 		}
+		hr { margin-top: 1.7em; margin-bottom: 1.7em; }
 		h2, h3, h4, h5 { margin-block-start: 1.75em; }
 		h1 { font-size: 140%; }
 		h2 { font-size: 130%; }
@@ -54,5 +55,36 @@
 </head>
 <body>
 {{ content }}
+<br><hr>
+<div>
+	<label for="fontSizeSlider" style="margin-right: 0.2em;">字型大小</label>
+	<input type="range" id="fontSizeSlider" min="16" max="32" value="20" oninput="updateFontSize(this.value)" onchange="saveFontSize(this.value)" style="width: 10em; vertical-align: middle; margin-right: 0.5em;">
+	<span id="fontSizeValue">20px</span>
+</div>
 </body>
+<script>
+	const fontSizeSlider = document.getElementById('fontSizeSlider');
+	const fontSizeDisplay = document.getElementById('fontSizeValue');
+
+	function updateFontSize(size) {
+		fontSizeDisplay.textContent = size + 'px';
+	}
+	function saveFontSize(size) {
+		document.body.style.fontSize = size + 'px';
+		localStorage.setItem('fontSize', size);
+	}
+	function loadFontSize() {
+		const savedSize = localStorage.getItem('fontSize') || 20;
+		fontSizeSlider.value = savedSize;
+		updateFontSize(savedSize);
+		document.body.style.fontSize = savedSize + 'px';
+	}
+	loadFontSize();
+	
+	document.addEventListener("visibilitychange", () => {
+		if (document.visibilityState === "visible") {
+			loadFontSize();
+		}
+	});
+</script>
 </html>

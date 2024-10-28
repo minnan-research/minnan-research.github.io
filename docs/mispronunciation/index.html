@@ -43,7 +43,7 @@
 			line-height: 1.3;
 			padding-bottom: 32px;
 			background-color: #f3f3f3;
-			font-size: 21px;
+			font-size: 20px;
 		}
 		hr { margin-top: 1.7em; margin-bottom: 1.7em; }
 		#header {
@@ -75,10 +75,10 @@
 		}
 		.unequal { color: #4c4c4c; }
 		.equal { color: #696969; }
-		.c1, .c1 + rt { color: #0c0cb6; }
+		.c1, .c1 + rt { color: #0323a6; }
 		.c2, .c2 + rt { color: Crimson; }
-		.c3, .c3 + rt { color: #006600; }
-		.c4, .c4 + rt { color: #9409d3; }
+		.c3, .c3 + rt { color: #006300; }
+		.c4, .c4 + rt { color: #9620d3; }
 		.c5, .c5 + rt { color: #a04020; }
 		span::after, span::before { content: "\2060"; }
 		rt { font-size: 0.75em; /*font-family: Helvetica; */ }
@@ -258,8 +258,37 @@
 	<p>加<span class="c1">速</span><wbr><span class="unequal">≠</span>加味<span class="c2">素</span></p>
 	</div>
 	<hr>
+	<div>
+		<label for="fontSizeSlider" style="margin-right: 0.2em;">字型大小</label>
+		<input type="range" id="fontSizeSlider" min="16" max="32" value="20" oninput="updateFontSize(this.value)" onchange="saveFontSize(this.value)" style="width: 10em; vertical-align: middle; margin-right: 0.5em;">
+		<span id="fontSizeValue">20px</span>
+	</div>
 	<p><a class="c1" href="https://docs.google.com/forms/d/e/1FAIpQLSehFWaiVaaHZEaFOwEE55vSQWZkEHK2BwaLAqhfgCk2QG96vA/viewform">提供建議</a></p>
 	<script>
+		const fontSizeSlider = document.getElementById('fontSizeSlider');
+		const fontSizeDisplay = document.getElementById('fontSizeValue');
+
+		function updateFontSize(size) {
+			fontSizeDisplay.textContent = size + 'px';
+		}
+		function saveFontSize(size) {
+			document.body.style.fontSize = size + 'px';
+			localStorage.setItem('fontSize', size);
+			updateMargins();
+		}
+		function loadFontSize() {
+			const savedSize = localStorage.getItem('fontSize') || 20;
+			fontSizeSlider.value = savedSize;
+			updateFontSize(savedSize);
+			document.body.style.fontSize = savedSize + 'px';
+		}
+		loadFontSize();
+		
+		document.addEventListener("visibilitychange", () => {
+			if (document.visibilityState === "visible") {
+				loadFontSize();
+			}
+		});
 		const links = document.querySelectorAll('#content a');
 		const audio = document.getElementById('audio');
 		const audioEx = document.getElementById('audio-ex');
@@ -297,6 +326,6 @@
 		}
 		window.addEventListener("load", updateMargins);
 		window.addEventListener("resize", updateMargins);
-	</script>	
+	</script>
 </body>
 </html>
