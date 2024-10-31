@@ -323,8 +323,9 @@
 		});
 		function updateMargins() {
 			const paragraphs = document.querySelectorAll('#content > p');
+			const fontSize = parseInt(document.documentElement.style.fontSize);
 			paragraphs.forEach(paragraph => {
-				const height = Math.min(Math.max(paragraph.clientHeight, 80), 240);
+				const height = Math.min(Math.max(paragraph.clientHeight * 1.5, fontSize * 3), fontSize * 6);
 				paragraph.style.marginTop = `${height * 0.5}px`;
 				paragraph.style.marginBottom = `${height * 0.5}px`;
 			});
