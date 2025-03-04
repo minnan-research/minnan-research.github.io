@@ -68,7 +68,7 @@
 			font-size: 90%;
 			color: #444;
 			padding-left: 0.5em;
-			margin-top: -0.3em;
+			margin-top: -0.4em;
 		}
 		/*
 		#content a::after {
@@ -116,6 +116,11 @@
 <p style="font-size: 90%;">留意閩南語的變調規則：詞組中<span class="emphasize">非</span>最後一個字需變調。</p>
 <p style="font-size: 90%;">音檔來自 <a class="c1" href="https://sutian.moe.edu.tw/zh-hant/">教育部臺灣台語常用詞辭典</a></p>
 <p style="font-size: 90%;">也可參考 <a class="c1" href="https://minnan-research.github.io/mistranslation/">國語直譯台語常見問題</a></p>
+<div style="margin-top: 1.7em;">
+	<label for="fontSizeSlider" style="margin-right: 0.2em;">文字大小</label>
+	<input type="range" id="fontSizeSlider" min="16" max="32" oninput="updateFontSize(this.value)" onchange="saveFontSize(this.value)" style="width: 10em; vertical-align: middle; margin-right: 0.5em;">
+	<span id="fontSizeValue">20px</span>
+</div>
 <hr>
 <audio id="audio"></audio>
 <div id="content">
@@ -194,7 +199,6 @@
 </div>
 <div><p>審<a data-href="tshat.wav"><span class="c1">察</span></a>    觀<span class="c1">察</span>    省<a data-href="tshat.wav"><span class="c1">察</span></a><wbr><span class="unequal">≠</span><a data-href="sim2-tsa.wav">審<span class="c2">查</span></a>    調<span class="c2">查</span></p></div>
 <div><p>順<span class="c1">服</span>主人    <span class="c1">服</span>從<wbr><span class="unequal">≠</span>祝<span class="c2">福</span>新人    <span class="c2">福</span>氣    <a data-href="hok-im.wav"><span class="c2">福</span>音</a></p></div>
-<div><p>恩<a data-href="tian2.wav"><span class="c1">典</span></a><wbr><span class="unequal">≠</span>重<span class="c2">點</span></p></div>
 <div><p><a data-href="loo2-lik8.mp3">努<span class="c1">力</span></a><wbr><span class="unequal">≠</span><a data-href="loo2-lat8.mp3">勞<span class="c2">力</span></a><span class="note">(謝謝)</span></p></div>
 <div>
 <p><a data-href="sin--siong7.wav"><span class="c1">身上</span></a><wbr><span class="unequal">≠</span><span class="c2">神像</span></p>
@@ -208,7 +212,6 @@
 <div><p><ruby><span class="c1">褻</span><rt>siat</rt></ruby>瀆    <span class="c1">設</span>局<wbr><span class="unequal">≠</span><ruby><span class="c2">謝</span><rt>siā</rt></ruby>禮</p></div>
 <div><p><a data-href="suan-poo3.wav">宣<span class="c1">佈</span></a><wbr><span class="unequal">≠</span>通<a data-href="po3.mp3"><span class="c2">報</span></a></p></div>
 <div><p><a data-href="jim7-bing7.wav">任<ruby><span class="c1">命</span><rt>bīng</rt></ruby></a>    誡<span class="c1">命</span><wbr><span class="unequal">≠</span><a data-href="jin7-mia7.wav">認<ruby><span class="c2">命</span><rt>miā</rt></ruby></a></p></div>
-<div><p><a data-href="ui2-jim7.wav">委<ruby><span class="c1">任</span><rt>jīm</rt></ruby></a><wbr><span class="unequal">≠</span><a data-href="sing5-jin7.wav">承<ruby><span class="c2">認</span><rt>jīn</rt></ruby></a><br><a data-href="jim7-ho5.wav"><ruby><span class="c1">任</span><rt>jīm</rt></ruby>何</a><wbr><span class="unequal">≠</span><ruby><span class="c2">認</span><rt>jīn</rt></ruby>路</p></div>
 <div><p><a data-href="tse3-tsok.wav">製<ruby><span class="c1">作</span><rt>tsok</rt></ruby></a>    發<span class="c1">作</span>    創<span class="c1">作</span><wbr><span class="unequal">≠</span><a data-href="tse3-tso7.wav">製<ruby><span class="c2">造</span><rt>tsō</rt></ruby></a>    創<span class="c2">造</span><wbr><span class="unequal">≠</span><a data-href="tsing3-tsoh.wav">種<ruby><span class="c3">作</span><rt>tsoh</rt></ruby></a>    <span class="c3">作</span>穡</p></div>
 <div><p><a data-href="kiam3.wav"><span class="c1">劍</span></a><wbr><span class="unequal">≠</span>弓<a data-href="tsinn3.wav"><span class="c2">箭</span></a>    <span class="c2">糋</span>雞排的<span class="c2">糋</span></p></div>
 <div>
@@ -225,6 +228,7 @@
 <p><a data-href="sit8-tsian7.wav">實<span class="c1">踐</span></a>    臭<span class="c1">賤</span>    手<span class="c1">賤</span><wbr><span class="unequal">≠</span>改<span class="c2">建</span><wbr><span class="unequal">≠</span><a data-href="thui-tsian3.wav">推<span class="c3">薦</span></a>    挑<span class="c3">戰</span></p>
 <p class="desc">「實<strong>踐</strong>」常誤讀為「實<strong>建</strong>」或「實<strong>薦</strong>」。因為這幾個字國語同音，不小心會搞混。</p>
 </div>
+<div><p><a data-href="koo-thong.wav"><ruby><span class="c1">溝</span><rt>koo</rt></ruby>通</a><wbr><span class="unequal">≠</span><ruby><span class="c2">交</span><rt>kau</rt></ruby>通</p></div>
 <div>
 <p>以賽<a data-href="a.wav"><span class="c1">亞</span></a>    馬利<a data-href="a.wav"><span class="c1">亞</span></a>    何西<a data-href="a.wav"><span class="c1">阿</span></a><wbr><span class="unequal">≠</span><a data-href="bun5-nga2.wav">文<span class="c2">雅</span></a>    西番<span class="c2">雅</span></p>
 <p class="desc">「亞」和「雅」也是經常會搞混的兩個字。</p>
@@ -247,6 +251,7 @@
 <p class="desc">「創世記」的「記」可能是受國語的「<ruby>記<rt>ㄐㄧˋ</rt></ruby>」或是「世紀」的發音影響，常有人誤讀為國語的 4 聲，正確發音應該跟其他書名一樣。</p>
 </div>
 <div><p>使徒行<a data-href="tuan7.wav"><span class="c1">傳</span></a><wbr><span class="equal">=</span>不<span class="c1">斷</span></p></div>
+<div><p><ruby><span class="c1">箴</span><rt>tsim</rt></ruby>言<wbr><span class="equal">=</span><span class="c1">斟</span>酌</p></div>
 <div><p>腓立<a data-href="pi2.wav"><ruby><span class="c1">比</span><rt>pí</rt></ruby></a><wbr><span class="unequal">≠</span><a data-href="pit.wav"><ruby><span class="c2">筆</span><rt>pit</rt></ruby></a><wbr><span class="unequal">≠</span>威士<span class="c3">比</span><br>巴<span class="c1">比</span>倫    <span class="c1">比</span>較<wbr><span class="unequal">≠</span><span class="c2">筆</span>記    <span class="c2">必</span>巡<span class="note">(裂縫)</span></p></div>
 <div><p>以<ruby><span class="c1">弗</span><rt>hut</rt></ruby>所<span class="unequal">≠</span><ruby><span class="c2">佛</span><rt>hu̍t/pu̍t</rt></ruby>教</p></div>
 <div><p>歷代<span class="c1">志</span>下    <span class="c1">志</span>願<wbr><span class="unequal">≠</span>列王<span class="c2">記</span>下    <span class="c2">記</span>錄</p></div>
@@ -264,93 +269,144 @@
 <p><a data-href="iong5-i7.wav">容<ruby><span class="c1">易</span><rt>ī</rt></ruby></a>    差<ruby><span class="c1">異</span><rt>ī</rt></ruby><wbr><span class="unequal">≠</span>龍<ruby><span class="c2">椅</span><rt>í</rt></ruby><wbr><span class="unequal">≠</span>佮<ruby><span class="c3">意</span><rt>ì</rt></ruby><wbr><span class="unequal">≠</span><a data-href="hue5-ik.wav">回<ruby><span class="c4">憶</span><rt>ik</rt></ruby></a>    一<span class="c4">億</span></p>
 <p class="desc">「容易」許多人受國語發音影響而讀成「龍椅」，其實這樣兩個字都讀錯了。</p>
 </div>
-<div><p><a data-href="soo-hut.wav">疏<ruby><span class="c1">忽</span><rt>hut</rt></ruby></a>    <span class="c1">忽</span>然    <span class="c1">忽</span>略<wbr><span class="unequal">≠</span>歡<span class="c2">呼</span>    <span class="c2">呼</span>求</p></div>
+<div>
+<p>短<a data-href="tsiam7.wav"><span class="c1">暫</span></a><wbr><span class="unequal">≠</span><a data-href="te2-tsam7.wav" data-href-ex="te2-tsam7-ex.wav">短<span class="c2">站</span></a><span class="note">(短程)</span></p>
+<p class="desc">「短暫」常被誤讀為「短站」，兩者是不同意思的。「<a data-href="tsiam7-si5.mp3">暫時</a>」則沒有人會讀錯。</p>
+</div>
+<div>
+<p>保<span class="c1">庇</span>    <a data-href="pi3-iu7.wav"><span class="c1">庇</span>佑</a>    <span class="c1">庇</span>護所<wbr><span class="unequal">≠</span><span class="c2">避</span>雨所    <span class="c2">避</span>難    <span class="c2">避</span>免</p>
+<p class="desc">「庇」的聲母是 ㄅ，不是 ㄆ。「保庇」沒有人會讀錯，但「庇護所」的「庇」常被誤讀成國語的「屁」，或者是跟「避難所」搞混而亂讀成「避護所」。</p>
+</div>
 <div><p><a data-href="phing5-koo2.mp3">評<span class="c1">估</span></a><wbr><span class="unequal">≠</span><a data-href="bu5-koo.mp3">無<span class="c2">辜</span></a><br><a data-href="koo2-ke3.mp3"><span class="c1">估</span>價</a>    評<span class="c1">估</span>損失<wbr><span class="unequal">≠</span><a data-href="koo-hu7.mp3"><span class="c2">辜</span>負</a></p></div>
 <div><p><a data-href="kuan2-hat.wav">管<ruby><span class="c1">轄</span><rt>hat</rt></ruby></a>    哥<span class="c1">轄</span><wbr><span class="unequal">≠</span><ruby><span class="c2">縖</span><rt>hâ</rt></ruby>皮帶</p></div>
-<div><p><a data-href="tsng-thann7.wav">妝<ruby><span class="c1">娗</span><rt>thānn</rt></ruby></a><wbr><span class="unequal">≠</span><a data-href="phoo5-thann2.wav">扶<span class="c2">挺</span></a><wbr><span class="unequal">≠</span><ruby><span class="c3">疊</span><rt>tha̍h</rt></ruby><wbr><span class="unequal">≠</span><ruby><span class="c4">塔</span><rt>thah</rt></ruby></p></div>
-<div><p><a data-href="tinn5-kha-puann3-tshiu2.wav">纏跤<span class="c1">絆</span>手</a>    <span class="c1">絆</span>腳石<wbr><span class="equal">=</span><span class="c1">半</span>路    <span class="c1">半</span>暝</p></div>
+<div>
+<p><a data-href="tsng-thann7.wav">妝<ruby><span class="c1">娗</span><rt>thānn</rt></ruby></a><wbr><span class="unequal">≠</span><a data-href="phoo5-thann2.wav">扶<span class="c2">挺</span></a><wbr><span class="unequal">≠</span><ruby><span class="c3">疊</span><rt>tha̍h</rt></ruby><wbr><span class="unequal">≠</span><ruby><span class="c4">塔</span><rt>thah</rt></ruby></p>
+<p class="desc">「妝娗」的「娗」因為幾乎沒有同音的字，所以不容易讀，常被誤讀為「妝塔」或「妝疊」。請點一下聽發音。</p>
+</div>
+<div><p><span class="c1">絆</span>腳石    <a data-href="tinn5-kha-puann3-tshiu2.wav">纏跤<span class="c1">絆</span>手</a><wbr><span class="equal">=</span><span class="c1">半</span>路    <span class="c1">半</span>暝</p></div>
 <div><p><a data-href="sik-in2.wav"><span class="c1">索</span>引</a><wbr><span class="equal">=</span><span class="c1">色</span>彩<wbr><span class="unequal">≠</span><span class="c2">索</span>仔<span class="note">(繩子)</span></p></div>
-<div><p>徵<a data-href="siong7.wav"><span class="c1">象</span></a>    大<span class="c1">像</span>    偶<span class="c1">像</span><wbr><span class="unequal">≠</span><a data-href="tsin-siong3.wav">真<span class="c2">相</span></a>    宰<span class="c2">相</span><wbr><span class="unequal">≠</span>大<ruby><span class="c3">象</span><rt>tshiūnn</rt></ruby></p></div>
-<div><p>反<ruby><span class="c1">省</span><rt>síng</rt></ruby><wbr><span class="unequal">≠</span>受<ruby><span class="c2">審</span><rt>sím</rt></ruby><br><ruby><span class="c1">省</span><rt>síng</rt></ruby>察自我    <span class="c1">省</span>事<wbr><span class="unequal">≠</span><ruby><span class="c2">審</span><rt>sím</rt></ruby>察人心    <span class="c2">審</span>判</p></div>
 <div>
 <p>這<ruby><span class="c1">片</span><rt>phiàn</rt></ruby>土地<wbr><span class="unequal">≠</span>這<ruby><span class="c2">片</span><rt>phìnn</rt></ruby>紙</p>
 <p class="desc">「片」：大面積或成群的的讀做 phiàn，音同「騙」，例如：「一片厝」(成群的房子)、「歸片的烏雲」(一整片烏雲)、「兩片田」。小面積的片狀物，才是用 phìnn，如：「一片雪花」、「一片枋仔」。</p>
 </div>
-<div><p><a data-href="koo-thong.wav"><ruby><span class="c1">溝</span><rt>koo</rt></ruby>通</a><wbr><span class="unequal">≠</span><ruby><span class="c2">交</span><rt>kau</rt></ruby>通</p></div>
-<div><p><a data-href="tsu-sin3.wav">資<span class="c1">訊</span></a>    <span class="c1">訊</span>號<wbr><span class="equal">=</span>相<span class="c1">信</span>    <span class="c1">信</span>心<wbr><span class="unequal">≠</span>受<span class="c2">訓</span>    <span class="c2">訓</span>練</p></div>
-<div><p><span class="c1">鏟</span>除<wbr><span class="equal">=</span><span class="c1">產</span>業<wbr><span class="unequal">≠</span><span class="c2">攕</span>仔<span class="note">(叉子)</span></p></div>
-<div><p><a data-href="hiat-thong2.wav"><span class="c1">血</span>統</a>    <span class="c1">血</span>脈    <span class="c1">血</span>緣<wbr><span class="unequal">≠</span><span class="c2">血</span>壓    <span class="c2">血</span>管</p></div>
+<div>
+<p><span class="c1">施</span>行    <span class="c1">施</span>展<wbr><span class="unequal">≠</span><span class="c2">實</span>行</p>
+<p class="desc">不知為何「施行奇蹟」常被誤讀為「實行奇蹟」。</p>
+</div>
+<div>
+<p>寶<ruby><span class="c1">藏</span><rt>tsōng</rt></ruby>    心<span class="c1">臟</span><wbr><span class="unequal">≠</span><span class="c2">葬</span></p>
+<p class="desc">「寶藏」常被誤讀為「寶葬」。</p>
+</div>
+<div><p>反<ruby><span class="c1">省</span><rt>síng</rt></ruby><wbr><span class="unequal">≠</span>受<ruby><span class="c2">審</span><rt>sím</rt></ruby><br><ruby><span class="c1">省</span><rt>síng</rt></ruby>察自我    <span class="c1">省</span>事<wbr><span class="unequal">≠</span><ruby><span class="c2">審</span><rt>sím</rt></ruby>察人心    <span class="c2">審</span>判</p></div>
+<div>
+<p>猶太<span class="c1">裔</span>    <a data-href="hua5-e3.wav">華<span class="c1">裔</span></a><wbr><span class="unequal">≠</span>災<span class="c2">厄</span>    拍<span class="c2">呃</span><span class="note">(打嗝)</span></p>
+<p class="desc">「裔」這個字也有各種各樣的誤讀，例如「億」。請參考「華裔」的發音，點一下聽聽看。</p>
+</div>
+<div><p>恩<a data-href="tian2.wav"><span class="c1">典</span></a><wbr><span class="unequal">≠</span>重<span class="c2">點</span></p></div>
+<div><p><a data-href="soo-hut.wav">疏<ruby><span class="c1">忽</span><rt>hut</rt></ruby></a>    <span class="c1">忽</span>然    <span class="c1">忽</span>略<wbr><span class="unequal">≠</span>歡<span class="c2">呼</span>    <span class="c2">呼</span>求</p></div>
+<div>
+<p><a data-href="tsu-sin3.wav">資<span class="c1">訊</span></a>    <span class="c1">訊</span>號<wbr><span class="equal">=</span>相<span class="c1">信</span>    <span class="c1">信</span>心<wbr><span class="unequal">≠</span>受<span class="c2">訓</span>    <span class="c2">訓</span>練</p>
+<p class="desc">「訊」這個字跟「信」同音，但因為大家較不熟悉，可能讀成「訓」。</p>
+</div>
+<div>
+<p><span class="c1">鏟</span>除<wbr><span class="equal">=</span><span class="c1">產</span>業<wbr><span class="unequal">≠</span><a data-href="tshiam2-a2.mp3"><span class="c2">攕</span>仔</a><span class="note">(叉子)</span></p>
+<p class="desc">「鏟」這個字跟「產」同音，但因為台語很少說「鏟除」，結果可能受國語發音影響，許多人讀成叉子的「攕」。用叉子是不能把惡勢力鏟除的。</p>
+</div>
+<div>
+<p><a data-href="tsip-hing5.wav"><ruby><span class="c1">執</span><rt>tsip</rt></ruby>行</a>    <span class="c1">執</span>照    <span class="c1">執</span>政<wbr><span class="unequal">≠</span><ruby><span class="c2">集</span><rt>tsi̍p</rt></ruby>合</p>
+<p class="desc">「執行」不知為何常誤讀為「集行」。但「執照」、「執政」等大家都不會讀錯。</p>
+</div>
+<div>
+<p><a data-href="kuan-kun.mp3"><span class="c1">冠</span>軍</a>    <span class="c1">冠</span>冕    <span class="c1">冠</span>狀病毒<wbr><span class="equal">=</span><span class="c1">關</span>心<wbr><span class="unequal">≠</span><span class="c2">罐</span>頭<br>花<a data-href="kuan.mp3"><span class="c1">冠</span></a><wbr><span class="equal">=</span>相<span class="c1">關</span><wbr><span class="unequal">≠</span>一<span class="c2">罐</span></p>
+<p class="desc">「冠」跟「關」同音，例如「冠軍」跟「關心」。但不熟悉的詞如「冠狀病毒」可能就會讀錯，變成「罐狀病毒」。</p>
+</div>
+<div>
+<p><a data-href="thi2-tshio3.wav"><span class="c1">恥</span>笑</a><wbr><span class="unequal">≠</span><span class="c2">齒</span>膏</p>
+<p class="desc">「恥笑」有時會聽到被誤讀成「齒笑」。</p>
+</div>
+<div>
+<p>羅<a data-href="bang7.wav"><span class="c1">網</span></a>    補破<a data-href="bang7.wav"><span class="c1">網</span></a><wbr><span class="unequal">/</span>羅<a data-href="bong2.wav"><span class="c2">網</span></a>&zwj;<span class="note">[文音]</span>    <a data-href="thian-lo5-te7-bong2.wav">天羅地<span class="c2">網</span></a><wbr><span class="unequal">≠</span>拍<a data-href="bang2.wav"><span class="c3">蠓</span></a><span class="note">(蚊子)</span><br><a data-href="bang7-loo7.wav"><span class="c1">網</span>路</a><wbr><span class="unequal">≠</span><a data-href="bang2-thang5.wav"><span class="c3">蠓</span>蟲</a></p>
+<p class="desc">「網」跟蚊子的「蠓」發音是不同的。有首歌叫「補破網」，熟悉台語的人一定不會讀錯。但不熟悉的詞如「羅網」就可能讀成「羅蠓」。<br>另外，「網路」許多人會讀成「蠓路」，但現代 90% 的人都這樣說，已積非成是，約定俗成了。</p>
+</div>
+<div><p><a data-href="ui2-jim7.wav">委<ruby><span class="c1">任</span><rt>jīm</rt></ruby></a><wbr><span class="unequal">≠</span><a data-href="sing5-jin7.wav">承<ruby><span class="c2">認</span><rt>jīn</rt></ruby></a><br><a data-href="jim7-ho5.wav"><ruby><span class="c1">任</span><rt>jīm</rt></ruby>何</a><wbr><span class="unequal">≠</span><ruby><span class="c2">認</span><rt>jīn</rt></ruby>路</p></div>
+<div><p>徵<a data-href="siong7.wav"><span class="c1">象</span></a>    大<span class="c1">像</span>    偶<span class="c1">像</span><wbr><span class="unequal">≠</span><a data-href="tsin-siong3.wav">真<span class="c2">相</span></a>    宰<span class="c2">相</span><wbr><span class="unequal">≠</span>大<ruby><span class="c3">象</span><rt>tshiūnn</rt></ruby></p></div>
+<div>
+<p><a data-href="hiat-thong2.wav"><span class="c1">血</span>統</a>    <span class="c1">血</span>脈    <span class="c1">血</span>緣<wbr><span class="unequal">≠</span><span class="c2">血</span>壓    <span class="c2">血</span>管</p>
+<p class="desc">「血統」「血脈」「血緣」這幾個詞的「血」都要讀文讀音 hiat。</p>
+</div>
 <div><p><span class="c1">榜</span>樣    放<span class="c1">榜</span><wbr><span class="unequal">≠</span><span class="c2">綁</span>票</p></div>
 <div><p>堅定不<a data-href="i5.wav"><ruby><span class="c1">移</span><rt>î</rt></ruby></a><wbr><span class="unequal">≠</span>堅信不<a data-href="gi5.wav"><ruby><span class="c2">疑</span><rt>gî</rt></ruby></a>    友<a data-href="gi5.wav"><span class="c2">誼</span></a></p></div>
 <div><p><a data-href="kian3-tiok8.wav">建<span class="c1">築</span></a><wbr><span class="unequal">≠</span><span class="c2">足</span><wbr><span class="unequal">≠</span>郵<span class="c3">局</span></p></div>
 <div><p><a data-href="khing7.wav"><ruby><span class="c1">虹</span><rt>khīng</rt></ruby></a><wbr><span class="unequal">≠</span><ruby><span class="c2">框</span><rt>khing</rt></ruby></p></div>
-<div><p>保<span class="c1">庇</span>    <a data-href="pi3-iu7.wav"><span class="c1">庇</span>佑</a>    <span class="c1">庇</span>護所<wbr><span class="unequal">≠</span><span class="c2">避</span>雨所    <span class="c2">避</span>難    <span class="c2">避</span>免</p></div>
 <div><p>忠<span class="c1">僕</span><wbr><span class="equal">=</span>刻<span class="c1">薄</span><br><span class="c1">僕</span>人<wbr><span class="equal">=</span><span class="c1">爆</span>炸</p></div>
 <div><p><a data-href="biau5-sut8.wav">描<span class="c1">述</span></a>    亞<span class="c1">述</span><wbr><span class="equal">=</span>手<span class="c1">術</span><wbr><span class="unequal">≠</span><a data-href="siok8.wav"><span class="c2">俗</span></a></p></div>
 <div><p>記<span class="c1">載</span>古代的歷史<wbr><span class="equal">=</span><span class="c1">載</span>人</p></div>
-<div><p>猶太<span class="c1">裔</span>    <a data-href="hua5-e3.wav">華<span class="c1">裔</span></a><wbr><span class="unequal">≠</span>災<span class="c2">厄</span>    拍<span class="c2">呃</span><span class="note">(打嗝)</span></p></div>
-<div><p>短<a data-href="tsiam7.wav"><span class="c1">暫</span></a><wbr><span class="unequal">≠</span><a data-href="te2-tsam7.wav" data-href-ex="te2-tsam7-ex.wav">短<span class="c2">站</span></a><span class="note">(短程)</span></p></div>
 <div><p><a data-href="bing5-ti3.wav">明<span class="c1">智</span></a>    一<span class="c1">致</span>    位<span class="c1">置</span>    處<span class="c1">置</span><wbr><span class="unequal">≠</span>內外<span class="c2">痔</span>    處<span class="c2">治</span>    醫<span class="c2">治</span></p></div>
 <div><p><a data-href="guan5-in.wav">原<ruby><span class="c1">因</span><rt>in</rt></ruby></a>    婚<span class="c1">姻</span><wbr><span class="unequal">≠</span>聲<ruby><span class="c2">音</span><rt>im</rt></ruby>    <a data-href="hok-im.wav">福<span class="c2">音</span></a></p></div>
 <div><p><ruby><span class="c1">灰</span><rt>hue</rt></ruby>心<wbr><span class="unequal">≠</span><ruby><span class="c2">非</span><rt>hui</rt></ruby>常</p></div>
-<div><p>鼓<ruby><span class="c1">吹</span><rt>tshui</rt></ruby>錯誤思想<wbr><span class="unequal">≠</span>歕鼓<ruby><span class="c2">吹</span><rt>tshue</rt></ruby></p></div>
-<div><p><ruby><span class="c1">箴</span><rt>tsim</rt></ruby>言<wbr><span class="equal">=</span><span class="c1">斟</span>酌</p></div>
-<div><p><a data-href="tsip-hing5.wav"><ruby><span class="c1">執</span><rt>tsip</rt></ruby>行</a>    <span class="c1">執</span>照    <span class="c1">執</span>政<wbr><span class="unequal">≠</span><ruby><span class="c2">集</span><rt>tsi̍p</rt></ruby>合</p></div>
-<div><p><a data-href="kuan-kun.mp3"><span class="c1">冠</span>軍</a>    <span class="c1">冠</span>冕    <span class="c1">冠</span>狀病毒<wbr><span class="equal">=</span><span class="c1">關</span>心<wbr><span class="unequal">≠</span><span class="c2">罐</span>頭<br>花<a data-href="kuan.mp3"><span class="c1">冠</span></a><wbr><span class="equal">=</span>相<span class="c1">關</span><wbr><span class="unequal">≠</span>一<span class="c2">罐</span></p></div>
-<div><p><a data-href="thi2-tshio3.wav"><span class="c1">恥</span>笑</a><wbr><span class="unequal">≠</span><span class="c2">齒</span>膏</p></div>
-<div><p><span class="c1">施</span>行    <span class="c1">施</span>展<wbr><span class="unequal">≠</span><span class="c2">實</span>行</p></div>
-<div><p>羅<a data-href="bang7.wav"><span class="c1">網</span></a>    補破<a data-href="bang7.wav"><span class="c1">網</span></a><wbr><span class="unequal">/</span>羅<a data-href="bong2.wav"><span class="c2">網</span></a>&zwj;<span class="note">[文音]</span>    <a data-href="thian-lo5-te7-bong2.wav">天羅地<span class="c2">網</span></a><wbr><span class="unequal">≠</span>拍<a data-href="bang2.wav"><span class="c3">蠓</span></a><span class="note">(蚊子)</span><br><a data-href="bang7-loo7.wav"><span class="c1">網</span>路</a><wbr><span class="unequal">≠</span><a data-href="bang2-thang5.wav"><span class="c3">蠓</span>蟲</a></p></div>
-<div><p><a data-href="khu-hik8.wav" data-href-ex="ik8.wav">區<ruby><span class="c1">域</span><rt>hi̍k/i̍k</rt></ruby></a><wbr><span class="unequal">≠</span>教<span class="c2">育</span></p></div>
-<div><p>寶<ruby><span class="c1">藏</span><rt>tsōng</rt></ruby>    心<span class="c1">臟</span><wbr><span class="unequal">≠</span><span class="c2">葬</span></p></div>
+<div>
+<p><a data-href="koo2-tshui.mp3">鼓<ruby><span class="c1">吹</span><rt>tshui</rt></ruby></a>錯誤思想<wbr><span class="unequal">≠</span>歕<a data-href="koo2-tshue.mp3">鼓<ruby><span class="c2">吹</span><rt>tshue</rt></ruby></a></p>
+<p class="desc">「鼓吹」用作動詞跟用作名詞，發音是不同的。</p>
+</div>
 <div><p><a data-href="gu5-kang2.wav">牛<span class="c1">犅</span></a><span class="note">(雄性牛羊)</span><wbr><span class="unequal">≠</span>狗<span class="c2">公</span></p></div>
-<div><p><span class="c1">妥</span>協<wbr><span class="equal">=</span><span class="c1">妥</span>當<wbr><span class="unequal">≠</span><span class="c2">討</span>論</p></div>
-<div><p><a data-href="kua-khik.wav">歌<span class="c1">曲</span></a><wbr><span class="unequal">≠</span>歪<span class="c2">曲</span>    <a data-href="niu2-khiok.wav">扭<span class="c2">曲</span></a><wbr><span class="unequal">≠</span>彎<span class="c3">曲</span></p></div>
+<div>
+<p><span class="c1">妥</span>協<wbr><span class="equal">=</span><span class="c1">妥</span>當<wbr><span class="unequal">≠</span><span class="c2">討</span>論</p>
+<p class="desc">「妥協」不知為何常誤讀為「討協」。請想想「妥當」的發音，就可以知道正確發音了。</p>
+</div>
+<div>
+<p><a data-href="kua-khik.wav">歌<span class="c1">曲</span></a><wbr><span class="unequal">≠</span>歪<a data-href="khiok.mp3"><span class="c2">曲</span></a>    <a data-href="niu2-khiok.wav">扭<span class="c2">曲</span></a><wbr><span class="unequal">≠</span><a data-href="uan-khiau.mp3">彎<span class="c3">曲</span></a>    <a data-href="oo7-kue2-khiau.mp3">芋粿<span class="c3">曲</span></a></p>
+<p class="desc">「曲」這個破音字有多種讀音，苦了正在學台語的人。</p>
+</div>
 <div><p><a data-href="tap-an3.wav"><ruby><span class="c1">答</span><rt>tap</rt></ruby>案</a>    <span class="c1">答</span>喙鼓    回<span class="c1">答</span><wbr><span class="unequal">≠</span><span class="c2">貼</span>紙</p></div>
 <div><p><ruby><span class="c1">睿</span><rt>juē/luē</rt></ruby>智<wbr><span class="unequal">≠</span><ruby><span class="c2">類</span><rt>luī</rt></ruby>似<wbr><span class="unequal">≠</span><ruby><span class="c3">瑞</span><rt>suī</rt></ruby>芳</p></div>
 <div><p>矛<a data-href="tun2.wav"><span class="c1">盾</span></a><wbr><span class="equal">=</span><a data-href="tun2.wav"><span class="c1">囤</span></a><br><span class="c1">盾</span>牌<wbr><span class="equal">=</span><span class="c1">囤</span>貨</p></div>
+<div><p><a data-href="khu-hik8.wav" data-href-ex="ik8.wav">區<ruby><span class="c1">域</span><rt>hi̍k/i̍k</rt></ruby></a><wbr><span class="unequal">≠</span>教<span class="c2">育</span></p></div>
 <div><p><a data-href="iong2-tsong3.wav">勇<ruby><span class="c1">壯</span><rt>tsòng</rt></ruby></a><wbr><span class="unequal">≠</span>形<ruby><span class="c2">狀</span><rt>tsōng</rt></ruby></p></div>
 <div><p><span class="c1">喪</span>禮<wbr><span class="equal">=</span><span class="c1">喪</span>事</p></div>
 <div><p><a data-href="sio-thin7.wav">相<ruby><span class="c1">伨</span><rt>thīn</rt></ruby></a></p></div>
 <div><p>災<span class="c1">禍</span><wbr><span class="unequal">≠</span>王<span class="c2">后</span></p></div>
-<div><p><a data-href="him5.wav"><ruby><span class="c1">熊</span><rt>hîm</rt></ruby></a><wbr><span class="unequal">≠</span>情<span class="c2">形</span><wbr><span class="unequal">≠</span><span class="c3">雄雄</span></p></div>
 <div><p><a data-href="thi5-khau3.wav"><ruby><span class="c1">啼</span><rt>thî</rt></ruby>哭</a><wbr><span class="unequal">≠</span><span class="c2">提</span>案</p></div>
 <div><p>茂<a data-href="sing7.wav"><ruby><span class="c1">盛</span><rt>sīng</rt></ruby></a>    強<span class="c1">盛</span><wbr><span class="unequal">≠</span>好<span class="c2">勝</span><br><span class="c1">盛</span>大<wbr><span class="unequal">≠</span><span class="c2">勝</span>利</p></div>
 <div><p><span class="c1">果</span>然    <span class="c1">果</span>實<wbr><span class="unequal">≠</span><span class="c2">果</span>子</p></div>
+<div><p><a data-href="tsan5-khok.wav">殘<span class="c1">酷</span></a><wbr><span class="equal">=</span>後<span class="c1">擴</span><span class="note">(後腦杓)</span><wbr><span class="unequal">≠</span>穿<span class="c2">褲</span></p></div>
 <div><p>忠<a data-href="tsing.wav"><span class="c1">貞</span></a><wbr><span class="equal">=</span>時<span class="c1">鐘</span><wbr><span class="unequal">≠</span><a data-href="tsin.wav"><span class="c2">真</span></a></p></div>
 <div><p><a data-href="sim7-tsi3.wav"><span class="c1">甚</span>至</a><wbr><span class="unequal">≠</span><span class="c2">腎</span></p></div>
 <div><p><a data-href="tiat-hak8.wav"><span class="c1">哲</span>學</a><wbr><span class="unequal">≠</span><span class="c2">折</span>磨</p></div>
 <div><p><span class="c1">詔</span>書<wbr><span class="equal">=</span><span class="c1">照</span>顧</p></div>
 <div><p><a data-href="ui5-ham7.wav"><span class="c1">遺</span>憾</a>    <a data-href="ui5-san2.wav"><span class="c1">遺</span>產</a>    <a data-href="ui5-the2.wav"><span class="c1">遺</span>體</a>    <a data-href="ui5-thuan5.wav"><span class="c1">遺</span>傳</a></p></div>
 <div><p><a data-href="boo5-iunn7.wav"><span class="c1">模</span>樣</a>    <span class="c1">模</span>仔<wbr><span class="unequal">≠</span><a data-href="moo5-kui2.wav"><span class="c2">魔</span>鬼</a></p></div>
-<div><p><a data-href="siong7-ting.wav">象<span class="c1">徵</span></a>    應<span class="c1">徵</span><wbr><span class="equal">=</span><span class="c1">丁</span>    <span class="c1">燈</span><wbr><span class="unequal">≠</span>出<span class="c2">征</span></p></div>
+<div><p><a data-href="siong7-ting.wav">象<span class="c1">徵</span></a>    <a data-href="ing3-ting.mp3">應<span class="c1">徵</span></a><wbr><span class="equal">=</span><span class="c1">丁</span>    <span class="c1">燈</span><wbr><span class="unequal">≠</span>出<span class="c2">征</span></p></div>
 <div><p><span class="c1">徵</span>象<wbr><span class="unequal">≠</span><a data-href="tsin-siong3.wav"><span class="c2">真</span>相</a></p></div>
 <div><p><a data-href="tshiong-tut8.wav">衝<span class="c1">突</span></a><wbr><span class="equal">=</span>撞<span class="c1">突</span></p></div>
 <div><p><a data-href="bai5-uan3.wav">埋<span class="c1">怨</span></a>    顧人<span class="c1">怨</span><wbr><span class="unequal">≠</span>心<span class="c2">願</span></p></div>
 <div><p><a data-href="tiat8-su7.wav"><span class="c1">秩</span>序</a><wbr><span class="unequal">≠</span><span class="c2">智</span>慧</p></div>
-<div><p>明<a data-href="pian7.wav"><span class="c1">辨</span></a>    分<span class="c1">辨</span><wbr><span class="equal">=</span>方<span class="c1">便</span><wbr><span class="unequal">≠</span>改<span class="c2">變</span></p></div>
+<div><p><a data-href="pian7.wav"><span class="c1">辯</span></a><wbr><span class="equal">=</span>明<a data-href="pian7.wav"><span class="c1">辨</span></a>    分<span class="c1">辨</span><wbr><span class="equal">=</span>方<span class="c1">便</span><wbr><span class="unequal">≠</span>改<span class="c2">變</span></p></div>
+<div><p><a data-href="him5.wav"><ruby><span class="c1">熊</span><rt>hîm</rt></ruby></a><wbr><span class="unequal">≠</span>情<span class="c2">形</span><wbr><span class="unequal">≠</span><span class="c3">雄雄</span></p></div>
 <div><p><a data-href="ian5-koo3.wav"><span class="c1">緣</span>故</a>    <span class="c1">緣</span>投<wbr><span class="unequal">≠</span><a data-href="guan5-in.wav"><span class="c2">原</span>因</a>    <span class="c2">頑</span>固</p></div>
 <div><p><a data-href="tsiam-tui3.wav"><span class="c1">針</span>對</a><wbr><span class="unequal">≠</span><span class="c2">真</span>正<wbr><span class="unequal">≠</span><span class="c3">珍</span>寶</p></div>
 <div><p><a data-href="tap-an3.wav">答<ruby><span class="c1">案</span><rt>àn</rt></ruby></a>    報<span class="c1">案</span><wbr><span class="unequal">≠</span>下<ruby><span class="c2">暗</span><rt>àm</rt></ruby></p></div>
 <div><p><ruby><span class="c1">銀</span><rt>gîn/gûn</rt></ruby>    <span class="c1">銀</span>行    金包<span class="c1">銀</span><wbr><span class="unequal">≠</span><ruby><span class="c2">吟</span><rt>gîm</rt></ruby>詩<wbr><span class="unequal">≠</span><ruby><span class="c3">淫</span><rt>îm</rt></ruby>亂</p></div>
 <div><p>鄉<a data-href="tin3.wav"><span class="c1">鎮</span></a>    小<span class="c1">鎮</span><wbr><span class="unequal">≠</span>鬥<span class="c2">陣</span></p></div>
 <div><p><a data-href="khun3-lan5.wav">困<span class="c1">難</span></a><wbr><span class="equal">=</span>魚<span class="c1">鱗</span><br><a data-href="lan5-te5.wav"><span class="c1">難</span>題</a><wbr><span class="equal">=</span><span class="c1">蘭</span>花</p></div>
-<div><p><a data-href="tsit-tsik.wav"><ruby><span class="c1">職</span><rt>tsit</rt></ruby>責</a>    <span class="c1">職</span>位    <span class="c1">質</span>問    <span class="c1">質</span>疑<wbr><span class="unequal">≠</span><ruby><span class="c2">叔</span><rt>tsik</rt></ruby>公</p></div>
 <div><p><a data-href="gi2-gian2.wav">語<ruby><span class="c2">言</span><rt>giân</rt></ruby></a><wbr><span class="unequal">≠</span><a data-href="ian5.wav"><ruby><span class="c3">鉛</span><rt>iân</rt></ruby></a>    <a data-href="ian5.wav"><ruby><span class="c3">緣</span><rt>iân</rt></ruby></a></p></div>
-<div><p><a data-href="tsan5-khok.wav">殘<span class="c1">酷</span></a><wbr><span class="equal">=</span>後<span class="c1">擴</span><span class="note">(後腦杓)</span><wbr><span class="unequal">≠</span>穿<span class="c2">褲</span></p></div>
-<div><p><span class="c1">重</span>用    <span class="c1">重</span>要<wbr><span class="unequal">≠</span><span class="c2">重</span>量</p></div>
 <div><p><a data-href="tsing-tsip.wav">爭<span class="c1">執</span></a><wbr><span class="unequal">≠</span>戇<span class="c2">直</span></p></div>
+<div><p><span class="c1">致</span>著重病<wbr><span class="unequal">≠</span><span class="c2">得</span>著報應</p></div>
 <div><p><a data-href="jiat8-tai3.wav">熱<span class="c1">帶</span></a>    一<span class="c1">帶</span>    連<span class="c1">帶</span><wbr><span class="unequal">≠</span>後<span class="c2">代</span></p></div>
 <div><p>哥<span class="c1">林</span>多<wbr><span class="equal">=</span><span class="c1">臨</span>時<wbr><span class="unequal">≠</span><span class="c2">鄰</span>長</p></div>
-<div><p><span class="c1">集</span>中營    <span class="c1">集</span>會<wbr><span class="unequal">≠</span><span class="c2">及</span>格<br>聚<span class="c1">集</span><wbr><span class="unequal">≠</span>以<span class="c2">及</span></p></div>
 <div><p><a data-href="tsu7-hue7.wav"><span class="c1">聚</span>會</a><wbr><span class="unequal">≠</span><span class="c2">具</span>體<wbr><span class="unequal">≠</span><span class="c3">集</span>會</p></div>
 <div><p><a data-href="tsi2-in2.wav">指<ruby><span class="c1">引</span><rt>ín</rt></ruby></a>    <ruby><span class="c1">引</span><rt>ín</rt></ruby>起<wbr><span class="unequal">≠</span>餐<ruby><span class="c2">飲</span><rt>ím</rt></ruby>    <ruby><span class="c2">飲</span><rt>ím</rt></ruby>料</p></div>
 <div><p>歡<ruby><span class="c1">迎</span><rt>gîng</rt></ruby>    <a data-href="ging5-tsiap.wav"><span class="c1">迎</span>接</a><wbr><span class="unequal">≠</span><span class="c2">營</span>    <span class="c2">閒</span></p></div>
 <div><p><a data-href="hun7-luan7.wav"><ruby><span class="c1">混</span><rt>hūn</rt></ruby>亂</a><wbr><span class="unequal">≠</span><span class="c2">憤</span>怒</p></div>
-<div><p><ruby><span class="c1">差</span><rt>tshe</rt></ruby>派    <span class="c1">差</span>敎<wbr><span class="unequal">≠</span>出<ruby><span class="c2">差</span><rt>tshai</rt></ruby></p></div>
-<div><p><ruby><span class="c1">渴</span><rt>khat</rt></ruby>望<wbr><span class="unequal">≠</span><span class="c2">可</span>憐</p></div>
+<div><p><ruby><span class="c1">差</span><rt>tshe</rt></ruby>派    <span class="c1">差</span>教<wbr><span class="unequal">≠</span>出<ruby><span class="c2">差</span><rt>tshai</rt></ruby></p></div>
+<div>
+<p><ruby><span class="c1">渴</span><rt>khat</rt></ruby>望<wbr><span class="unequal">≠</span><span class="c2">可</span>憐</p>
+<p class="desc">「渴望」大家平常很少用這個字，所以就會亂讀成「可望」。其實台語可以說「向望」，意思差不多。</p>
+</div>
+<div><p>選<span class="c1">擇</span><wbr><span class="equal">=</span>潤<span class="c1">澤</span><wbr><span class="equal">=</span>對<span class="c1">敵</span><wbr><span class="unequal">≠</span>原<span class="c2">則</span><wbr><span class="equal">=</span>負<span class="c2">責</span></p></div>
 <div><p>歌<ruby><span class="c1">頌</span><rt>siōng</rt></ruby><wbr><span class="unequal">≠</span><span class="c2">爽</span></p></div>
+<div><p><a data-href="tsit-tsik.wav"><ruby><span class="c1">職</span><rt>tsit</rt></ruby>責</a>    <span class="c1">職</span>位    <span class="c1">質</span>問    <span class="c1">質</span>疑<wbr><span class="unequal">≠</span><ruby><span class="c2">叔</span><rt>tsik</rt></ruby>公</p></div>
+<div><p>事<ruby><span class="c1">業</span><rt>gia̍p</rt></ruby>    <a data-href="giap8-bu7.wav"><span class="c1">業</span>務</a><wbr><span class="unequal">≠</span>一<ruby><span class="c2">頁</span><rt>ia̍h</rt></ruby><wbr><span class="unequal">≠</span><ruby><span class="c3">葉</span><rt>ia̍p</rt></ruby>先生<wbr><span class="unequal">≠</span>日<ruby><span class="c4">夜</span><rt>iā</rt></ruby><wbr><span class="unequal">≠</span>血<ruby><span class="c5">液</span><rt>&#8203;i̍k</rt></ruby></p></div>
 <!-- 以下較不常見 -->
-<div><p>獻<span class="c1">祭</span><wbr><span class="unequal">≠</span>獻<span class="c2">計</span></p></div>
 <div><p><span class="c1">喬</span><wbr><span class="equal">=</span><a data-href="hua5-kiau5.wav">華<span class="c1">僑</span></a><wbr><span class="unequal">≠</span>過<span class="c2">橋</span></p></div>
 <div><p><a data-href="hian.wav"><span class="c1">軒</span></a><wbr><span class="equal">=</span><span class="c1">掀</span><wbr><span class="unequal">≠</span><span class="c2">宣</span></p></div>
 <div><p><a data-href="gan7.wav"><span class="c1">諺</span></a><wbr><span class="equal">=</span><a data-href="gan7.wav"><span class="c1">彥</span></a><wbr><span class="unequal">≠</span><a data-href="gan3.wav"><span class="c2">𫝏</span></a><span class="note">(凍、冰冷)</span></p></div>
@@ -360,13 +416,13 @@
 <div><p><ruby><span class="c1">恢</span><rt>(k)hue</rt></ruby>復<wbr><span class="unequal">≠</span><ruby><span class="c2">輝</span><rt>hui</rt></ruby>煌</p></div>
 <div><p><span class="c1">十全</span>十美<wbr><span class="unequal">≠</span>無<span class="c2">十全</span></p></div>
 <div><p>迷<ruby><span class="c1">惑</span><rt>hi̍k</rt></ruby>人<span class="note">(變調 8 → 3)</span></p></div>
+<div><p>獻<span class="c1">祭</span><wbr><span class="unequal">≠</span>獻<span class="c2">計</span></p></div>
 <div><p><span class="c1">徛</span>在<wbr><span class="unequal">≠</span><span class="c2">倚</span>靠</p></div>
-<div><p><span class="c1">致</span>著重病<wbr><span class="unequal">≠</span><span class="c2">得</span>著報應</p></div>
 <div><p>現<span class="c1">今</span><wbr><span class="equal">=</span>現<span class="c1">金</span>    目睭<span class="c1">金金</span></p></div>
-<div><p>選<span class="c1">擇</span><wbr><span class="equal">=</span>潤<span class="c1">澤</span><wbr><span class="equal">=</span>對<span class="c1">敵</span><wbr><span class="unequal">≠</span>原<span class="c2">則</span><wbr><span class="equal">=</span>負<span class="c2">責</span></p></div>
+<div><p><span class="c1">重</span>用    <span class="c1">重</span>要<wbr><span class="unequal">≠</span><span class="c2">重</span>量</p></div>
+<div><p><span class="c1">集</span>中營    <span class="c1">集</span>會<wbr><span class="unequal">≠</span><span class="c2">及</span>格<br>聚<span class="c1">集</span><wbr><span class="unequal">≠</span>以<span class="c2">及</span></p></div>
 <div><p><a data-href="tiah-iau3.wav"><ruby><span class="c1">摘</span><rt>tiah/tik</rt></ruby>要</a><wbr><span class="unequal">≠</span><span class="c2">災</span>難</p></div>
 <div><p>茫茫<span class="c1">渺</span>渺    <span class="c1">渺</span>小<wbr><span class="equal">=</span><span class="c1">藐</span>視<wbr><span class="unequal">≠</span><span class="c2">秒</span></p></div>
-<div><p>事<ruby><span class="c1">業</span><rt>gia̍p</rt></ruby>    <a data-href="giap8-bu7.wav"><span class="c1">業</span>務</a><wbr><span class="unequal">≠</span>一<ruby><span class="c2">頁</span><rt>ia̍h</rt></ruby><wbr><span class="unequal">≠</span><ruby><span class="c3">葉</span><rt>ia̍p</rt></ruby>先生<wbr><span class="unequal">≠</span>日<ruby><span class="c4">夜</span><rt>iā</rt></ruby><wbr><span class="unequal">≠</span>血<ruby><span class="c5">液</span><rt>&#8203;i̍k</rt></ruby></p></div>
 <div><p><a data-href="buan2-an.wav"><span class="c1">晚</span>安</a>    <span class="c1">晚</span>餐<wbr><span class="equal">=</span><span class="c1">滿</span>足</p></div>
 <div><p><a data-href="kua.wav"><span class="c1">柯</span></a><wbr><span class="equal">=</span><span class="c1">歌</span><wbr><span class="equal">=</span><span class="c1">瓜</span></p></div>
 <div><p>懷<ruby><span class="c1">孕</span><rt>īn</rt></ruby><wbr><span class="unequal">≠</span><span class="c2">運</span></p></div>
@@ -380,11 +436,6 @@
 <div><p><span class="c1">構</span>造<wbr><span class="equal">=</span><span class="c1">顧</span>羊<wbr><span class="equal">=</span><span class="c1">購</span>買</p></div>
 </div>
 <hr>
-<div>
-	<label for="fontSizeSlider" style="margin-right: 0.2em;">文字大小</label>
-	<input type="range" id="fontSizeSlider" min="16" max="32" oninput="updateFontSize(this.value)" onchange="saveFontSize(this.value)" style="width: 10em; vertical-align: middle; margin-right: 0.5em;">
-	<span id="fontSizeValue">20px</span>
-</div>
 <p><a class="c1" href="https://docs.google.com/forms/d/e/1FAIpQLSehFWaiVaaHZEaFOwEE55vSQWZkEHK2BwaLAqhfgCk2QG96vA/viewform">提供建議</a></p>
 <script>
 	const fontSizeSlider = document.getElementById('fontSizeSlider');
@@ -443,7 +494,7 @@
 		const paragraphs = document.querySelectorAll('#content > div');
 		const fontSize = parseInt(document.documentElement.style.fontSize);
 		paragraphs.forEach(paragraph => {
-			const height = Math.min(Math.max(paragraph.clientHeight * 1.5, fontSize * 3.5), fontSize * 6);
+			const height = Math.min(Math.max(paragraph.clientHeight * 1.5, fontSize * 3.5), fontSize * 6.5);
 			paragraph.style.marginTop = `${height * 0.5}px`;
 			paragraph.style.marginBottom = `${height * 0.5}px`;
 		});
