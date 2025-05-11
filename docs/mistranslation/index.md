@@ -117,7 +117,7 @@
 「這件代誌實在**予人**真艱苦。」  
 這個「予人」如果連音成「ㄏㄨㄥˇ」就會怪怪的對嗎？
 
-從 [TaigiTube 搜尋台語劇的「讓人」](https://taigitube.com/search?query=%E8%AE%93%E4%BA%BA&v=0nVavEuG5CU&t=1027)，就可以觀察到這個現象。
+從 [TaigiTube 搜尋台語劇的「讓人」](https://taigitube.com/search?query=%E8%AE%93%E4%BA%BA)，就可以觀察到這個現象。
 
 也因此，有些說法如「予人知影」，如果連音，聽起來就是「被人知道」的意思。如果是要表達「使人/讓人知道」，就不要連音比較好。
 
