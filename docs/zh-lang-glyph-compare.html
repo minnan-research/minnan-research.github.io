@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lang 屬性字形對比</title>
+    <style>
+        body { margin: 20px; font-family: sans-serif; }
+        .container { display: flex; gap: 20px; }
+        .lang-column { 
+            flex: 1; 
+            border: 1px solid #eee; 
+            padding: 20px; 
+            background: #fafafa;
+        }
+        .label { 
+            font-weight: bold; 
+            font-size: 1.2em;
+            border-bottom: 2px solid #333; 
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+        }
+        .glyphs { 
+            font-size: 60px; 
+            line-height: 1.6;
+            word-break: break-all;
+            letter-spacing: 5px; /* 增加字間距方便觀察 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="lang-column" lang="zh-Hant">
+            <div class="label">zh-Hant</div>
+            <div class="glyphs">骨述刃令內全次化草清直窗角別</div>
+        </div>
+
+        <div class="lang-column" lang="zh-Hans">
+            <div class="label">zh-Hans</div>
+            <div class="glyphs">骨述刃令內全次化草清直窗角別</div>
+        </div>
+
+        <div class="lang-column" lang="ami">
+            <div class="label">ami</div>
+            <div class="glyphs">骨述刃令內全次化草清直窗角別</div>
+        </div>
+    </div>
+
+</body>
+</html>
