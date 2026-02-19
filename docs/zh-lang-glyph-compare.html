@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lang 屬性字形對比</title>
     <style>
-        body { margin: 10px; font-family: sans-serif; }
+        body { }
         .container { 
             display: flex; 
             flex-wrap: wrap; /* 自動換行 */
@@ -27,26 +27,25 @@
         .glyphs { 
             line-height: 1.5;
             word-break: break-all;
-            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="lang-column" lang="zh-Hant">
+        <div class="lang-column">
             <div class="label">zh-Hant</div>
-            <div class="glyphs">骨述刃令內全次化草清直窗角別</div>
+            <div lang="zh-Hant" class="glyphs">骨述刃令內全次化草清直窗角別</div>
         </div>
 
-        <div class="lang-column" lang="zh-Hans">
+        <div class="lang-column">
             <div class="label">zh-Hans</div>
-            <div class="glyphs">骨述刃令內全次化草清直窗角別</div>
+            <div lang="ami" class="glyphs">骨述刃令內全次化草清直窗角別</div>
         </div>
 
-        <div class="lang-column" lang="ami">
+        <div class="lang-column">
             <div class="label">ami</div>
-            <div class="glyphs">骨述刃令內全次化草清直窗角別</div>
+            <div lang="zh-Hans" class="glyphs">骨述刃令內全次化草清直窗角別</div>
         </div>
     </div>
 
