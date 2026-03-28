@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lang 屬性字形對比</title>
+    <style>
+        body { font-size: larger; }
+
+        .glyphs::before {
+            content: "華過骨述刃令內全次化草窗角，。」";
+        }
+        .container { 
+            display: flex; 
+            flex-wrap: wrap; /* 自動換行 */
+            gap: 10px; 
+        }
+        .lang-column { 
+            flex: 1; 
+            min-width: 300px; /* 確保在手機上會堆疊 */
+            border: 1px solid #eee; 
+            padding: 15px; 
+            background: #fafafa;
+        }
+        .label { 
+            font-weight: bold; 
+            border-bottom: 2px solid #333; 
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        }
+        .glyphs { 
+            line-height: 1.5;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="lang-column">
+            <div class="label">lang="zh-Hant"</div>
+            <div lang="zh-Hant" class="glyphs"></div>
+        </div>
+
+        <div class="lang-column">
+            <div class="label">lang="ami"</div>
+            <div lang="ami" class="glyphs"></div>
+        </div>
+
+        <div class="lang-column">
+            <div class="label">lang="zh-Hans"</div>
+            <div lang="zh-Hans" class="glyphs"></div>
+        </div>
+
+        <div class="lang-column">
+            <div class="label">lang="test-random-lang"</div>
+            <div lang="test-random-lang" class="glyphs"></div>
+        </div>
+    </div>
+
+</body>
+</html>
