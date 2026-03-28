@@ -90,14 +90,14 @@
 			font-family: "JetBrains Mono", monospace;
 			padding-left: 0.8em; padding-right: 0.8em
 		}
-		.unequal { color: #4c4c4c; }
-		.equal { color: #696969; }
+		s-neq { color: #4c4c4c; }
+		s-eq { color: #696969; }
 		s-c1, s-c1 + rt { color: #0323a6; }
 		s-c2, s-c2 + rt { color: Crimson; }
 		s-c3, s-c3 + rt { color: #006300; }
 		s-c4, s-c4 + rt { color: #9620d3; }
 		s-c5, s-c5 + rt { color: #a04020; }
-		span::after, span::before { content: "\2060"; }
+		span::after, span::before, s-neq::after, s-neq::before, s-eq::after, s-eq::before, s-c1::after, s-c2::before, s-c2::after, s-c2::before, s-c3::after, s-c3::before, s-c4::after, s-c4::before, s-c5::after, s-c5::before { content: "\2060"; }
 		rt { font-size: 0.75em; }
 		.desc rt { font-size: 0.7em; }
 		
