@@ -512,60 +512,65 @@
 <hr>
 <p><a class="c1" href="https://docs.google.com/forms/d/e/1FAIpQLSehFWaiVaaHZEaFOwEE55vSQWZkEHK2BwaLAqhfgCk2QG96vA/viewform">提供建議</a></p>
 <script>
-	const fontSizeSlider = document.getElementById('fontSizeSlider');
-	const fontSizeDisplay = document.getElementById('fontSizeValue');
+    const fontSizeSlider = document.getElementById('fontSizeSlider');
+    const fontSizeDisplay = document.getElementById('fontSizeValue');
 
-	const searchBox = document.getElementById("searchBox");
-	const container = document.querySelector("#content");
-	const children = container.querySelectorAll(":scope > div"); // 只抓直屬子 div
+    const searchBox = document.getElementById("searchBox");
+    const container = document.querySelector("#content");
+    const children = container.querySelectorAll(":scope > div");
 
-	function updateFontSize(size) {
-		fontSizeDisplay.textContent = size + 'px';
-	}
-	function saveFontSize(size) {
-		document.documentElement.style.fontSize = size + 'px';
-		localStorage.setItem('fontSize', size);
-		updateMargins();
-	}
-	function loadFontSize() {
-		const savedSize = localStorage.getItem('fontSize') || DEFAULT_FONT_SIZE;
-		fontSizeSlider.value = savedSize;
-		updateFontSize(savedSize);
-		document.documentElement.style.fontSize = savedSize + 'px';
+    function updateFontSize(size) {
+        fontSizeDisplay.textContent = size + 'px';
+    }
 
-		searchBox.addEventListener("input", function () {
-			const keyword = this.value.trim().toLowerCase();
+    function saveFontSize(size) {
+        const safeSize = Number(size) || DEFAULT_FONT_SIZE;
+        document.documentElement.style.fontSize = safeSize + 'px';
+        localStorage.setItem('fontSize', String(safeSize));
+        updateMargins();
+    }
 
-			children.forEach(child => {
-				const text = child.textContent.toLowerCase();
-				if (keyword === "" || text.includes(keyword)) {
-					child.classList.remove("hidden"); // 顯示
-				} else {
-					child.classList.add("hidden"); // 隱藏
-				}
-			});
-			children.forEach(children => {
-				const mainText = Array.from(children.querySelectorAll("p:not(.desc)"))
-									.map(p => p.textContent.toLowerCase())
-									.join(" ");
+    function syncFontSize() {
+        const savedSize = Number(localStorage.getItem('fontSize')) || DEFAULT_FONT_SIZE;
+        fontSizeSlider.value = savedSize;
+        updateFontSize(savedSize);
+        document.documentElement.style.fontSize = savedSize + 'px';
+    }
 
-				if (keyword === "" || mainText.includes(keyword)) {
-					children.classList.remove("hidden"); // 顯示整個區塊（包含 desc）
-				} else {
-					children.classList.add("hidden"); // 隱藏整個區塊
-				}
-			});
+    function applySearch(keyword) {
+        const normalizedKeyword = keyword.trim().toLowerCase();
 
-			updateMargins();
-		});
-	}
-	loadFontSize();
+        children.forEach(child => {
+            const mainText = Array.from(child.querySelectorAll("p:not(.desc)"))
+                .map(p => p.textContent.toLowerCase())
+                .join(" ");
 
-	document.addEventListener("visibilitychange", () => {
-		if (document.visibilityState === "visible") {
-			loadFontSize();
-		}
-	});
+            const shouldShow = normalizedKeyword === "" || mainText.includes(normalizedKeyword);
+            child.classList.toggle("hidden", !shouldShow);
+        });
+
+        updateMargins();
+    }
+
+    searchBox.addEventListener("input", function () {
+        applySearch(this.value);
+    });
+
+    fontSizeSlider.addEventListener("input", function () {
+        updateFontSize(this.value);
+    });
+
+    fontSizeSlider.addEventListener("change", function () {
+        saveFontSize(this.value);
+    });
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+            syncFontSize();
+        }
+    });
+
+    syncFontSize();
 
 	const links = document.querySelectorAll('#content a');
 	const audio = document.getElementById('audio');
